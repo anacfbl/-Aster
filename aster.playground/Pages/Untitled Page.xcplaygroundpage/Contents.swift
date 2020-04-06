@@ -2,8 +2,8 @@ import UIKit
 import PlaygroundSupport
 import Foundation
 
-class PrimeiraTela : UIViewController {
-    override func loadView() {
+ class PrimeiraTela : UIViewController {
+     override func loadView() {
         let view = UIView()
         self.view = view
         
@@ -26,17 +26,16 @@ class PrimeiraTela : UIViewController {
     } // fecha load view
     
     @objc func tocouBotaoComecar () {
-        print("gerou")
         navigationController?.pushViewController(segundaTela, animated: true)
-    
+        
     } // fecha funcao tocou botao comecar
     
 } // fecha view primeira tela
 
 
 
-class SegundaTela : UIViewController {
-    override func loadView() {
+ class SegundaTela : UIViewController {
+     override func loadView() {
         let view = UIView()
         self.view = view
         
@@ -57,17 +56,16 @@ class SegundaTela : UIViewController {
     } // fecha load view
     
     @objc func tocouBotaoProximo () {
-        print ("tudo")
         navigationController?.pushViewController(terceiraTela, animated: true)
-
+        
     }// fecha funcao tocou botao proximo
     
 } // fecha view segunda tela
 
 
 
-class TerceiraTela : UIViewController {
-    override func loadView() {
+ class TerceiraTela : UIViewController {
+     override func loadView() {
         let view = UIView()
         self.view = view
         
@@ -90,15 +88,37 @@ class TerceiraTela : UIViewController {
     } // fecha load view
     
     @objc func tocouBotaoComecarZodiaco () {
-        print ("yeahh")
+        navigationController?.pushViewController(telaCeu, animated: true)
+
     } // fecha funcao tocou botao comecar zodiaco
     
 } // fecha view terceira tela
 
 
+
+ class TelaCeu : UIViewController {
+     override func loadView() {
+        let view = UIView()
+        self.view = view
+        
+        
+        // fundo tela ceu - todas as constelacoes
+        let ceuEstrelas = UIImage(named: "ceuestrelas")!
+        let fundoCeu = UIImageView(image: ceuEstrelas)
+        
+    
+        view.addSubview (fundoCeu)
+        
+    } // fecha load view
+    
+} // fecha view tela ceu
+
+
 let primeiraTela = PrimeiraTela (screenType: .ipad, isPortrait: false)
 let segundaTela = SegundaTela (screenType: .ipad, isPortrait: false)
 let terceiraTela = TerceiraTela (screenType: .ipad, isPortrait: false)
+let telaCeu = TelaCeu (screenType: .ipad, isPortrait: false)
+
 
 let navigation = UINavigationController(screenType: .ipad, isPortrait: false)
 navigation.pushViewController (primeiraTela, animated: false)
