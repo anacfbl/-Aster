@@ -4,16 +4,16 @@ import UIKit
 import PlaygroundSupport
 
 
-class Catalogo : UIViewController {
-    override func loadView() {
+public class Catalogo : UIViewController {
+  public override func loadView() {
         let view = UIView()
         self.view = view
         
         // fundo tela catalogo
         let catalogoimagem = UIImage (named: "catalogo")!
         let telaCatalogo = UIImageView (image: catalogoimagem)
+
         
-                
         // botao LEO
         let botaoLeo = UIButton ()
         botaoLeo.frame = CGRect (x: 270, y: 470, width: 72, height:72)
@@ -321,13 +321,4 @@ let aries = Aries (screenType: .ipad, isPortrait: false)
 let peixe = Peixe (screenType: .ipad, isPortrait: false)
 let aquario = Aquario (screenType: .ipad, isPortrait: false)
 let capricornio = Capricornio (screenType: .ipad, isPortrait: false)
-
-
-
-
-let navigation = UINavigationController(screenType: .ipad, isPortrait: false)
-navigation.pushViewController (catalogo, animated: false)
-navigation.navigationBar.isHidden =  false
-
-PlaygroundPage.current.liveView = navigation.scale(to: 0.7)
 
