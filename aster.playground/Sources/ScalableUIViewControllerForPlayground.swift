@@ -60,7 +60,7 @@ extension UIViewController {
     public func scale(to scale: Float) -> UIWindow {
         self.view.transform = CGAffineTransform(scaleX: CGFloat(scale), y: CGFloat(scale))
         self.preferredContentSize = self.view.frame.size
-        let window = UIWindow(frame: CGRect(x: 0, y: 0, width: 770, height: 956))
+        let window = UIWindow(frame: CGRect(x: 0, y: 0, width: 770, height: 500))
         window.backgroundColor = .black
         window.addSubview(self.view)
         self.view.center = window.center

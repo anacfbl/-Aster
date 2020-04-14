@@ -4,8 +4,8 @@ import UIKit
 import PlaygroundSupport
 
 
-class Catalogo : UIViewController {
-    override func loadView() {
+public class Catalogo : UIViewController {
+    public override func loadView() {
         let view = UIView()
         self.view = view
         
@@ -13,7 +13,12 @@ class Catalogo : UIViewController {
         let catalogoimagem = UIImage (named: "catalogo")!
         let telaCatalogo = UIImageView (image: catalogoimagem)
         
-                
+        // botao TELA CEU
+        let botaoCeu = UIButton ()
+        botaoCeu.frame = CGRect (x: 270, y: 470, width: 72, height:72)
+        botaoCeu.backgroundColor = .black
+//        botaoCeu.addTarget (nil, action: #selector (tocouCeu), for: .touchUpInside)
+        
         // botao LEO
         let botaoLeo = UIButton ()
         botaoLeo.frame = CGRect (x: 270, y: 470, width: 72, height:72)
@@ -113,6 +118,9 @@ class Catalogo : UIViewController {
     
     // funcoes botoes
     
+//    @objc func tocouCeu () {
+//        navigationController?.pushViewController(telaCeu, animated: true) }
+    
     @objc func tocouLeo () {
         navigationController?.pushViewController(leo, animated: true) }
     
@@ -148,14 +156,10 @@ class Catalogo : UIViewController {
     
     @objc func tocouCapricornio () {
         navigationController?.pushViewController(capricornio, animated: true) }
-    
-    
+
     
     
 }// fecha classe catalogo
-
-
-
 
 
 
@@ -321,13 +325,4 @@ let aries = Aries (screenType: .ipad, isPortrait: false)
 let peixe = Peixe (screenType: .ipad, isPortrait: false)
 let aquario = Aquario (screenType: .ipad, isPortrait: false)
 let capricornio = Capricornio (screenType: .ipad, isPortrait: false)
-
-
-
-
-let navigation = UINavigationController(screenType: .ipad, isPortrait: false)
-navigation.pushViewController (catalogo, animated: false)
-navigation.navigationBar.isHidden =  false
-
-PlaygroundPage.current.liveView = navigation.scale(to: 0.7)
 

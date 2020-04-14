@@ -5,14 +5,27 @@ import PlaygroundSupport
 
 
 public class Catalogo : UIViewController {
-  public override func loadView() {
+    public override func loadView() {
         let view = UIView()
         self.view = view
         
         // fundo tela catalogo
         let catalogoimagem = UIImage (named: "catalogo")!
         let telaCatalogo = UIImageView (image: catalogoimagem)
-
+        
+        // botao voltar
+        let botaoVoltar = UIButton ()
+        let botaoVoltarImagem = UIImage (named: "botaovoltar")
+        botaoVoltar.frame = CGRect ( x: 25, y: 30, width: 100, height:37)
+        botaoVoltar.setImage(botaoVoltarImagem, for: .normal)
+        botaoVoltar.addTarget (nil, action: #selector (tocouVoltar), for: .touchUpInside)
+        
+        // botao TELA CEU
+        let botaoCeu = UIButton ()
+        let botaoCeuImagem = UIImage (named: "botaoestrela")
+        botaoCeu.frame = CGRect ( x: 60, y: 680, width: 50, height:50)
+        botaoCeu.setImage(botaoCeuImagem, for: .normal)
+        botaoCeu.addTarget (nil, action: #selector (tocouCeu), for: .touchUpInside)
         
         // botao LEO
         let botaoLeo = UIButton ()
@@ -105,6 +118,8 @@ public class Catalogo : UIViewController {
         view.addSubview(botaoPeixe)
         view.addSubview(botaoAquario)
         view.addSubview(botaoCapricornio)
+        view.addSubview(botaoCeu)
+        view.addSubview(botaoVoltar)
         
         
         
@@ -113,48 +128,51 @@ public class Catalogo : UIViewController {
     
     // funcoes botoes
     
+    @objc func tocouVoltar () {
+        navigationController?.popViewController(animated: false) }
+    
+    @objc func tocouCeu () {
+        navigationController?.pushViewController(telaCeu, animated: false) }
+    
     @objc func tocouLeo () {
-        navigationController?.pushViewController(leo, animated: true) }
+        navigationController?.pushViewController(leo, animated: false) }
     
     @objc func tocouVirgo () {
-        navigationController?.pushViewController(virgo, animated: true) }
+        navigationController?.pushViewController(virgo, animated: false) }
     
     @objc func tocouCancer () {
-        navigationController?.pushViewController(cancer, animated: true) }
+        navigationController?.pushViewController(cancer, animated: false) }
     
     @objc func tocouLibra () {
-        navigationController?.pushViewController(libra, animated: true) }
+        navigationController?.pushViewController(libra, animated: false) }
     
     @objc func tocouEscorpiao () {
-        navigationController?.pushViewController(escorpiao, animated: true) }
+        navigationController?.pushViewController(escorpiao, animated: false) }
     
     @objc func tocouSagitario () {
-        navigationController?.pushViewController(sagitario, animated: true) }
+        navigationController?.pushViewController(sagitario, animated: false) }
     
     @objc func tocouGemini () {
-        navigationController?.pushViewController(gemini, animated: true) }
+        navigationController?.pushViewController(gemini, animated: false) }
     
     @objc func tocouTouro () {
-        navigationController?.pushViewController(touro, animated: true) }
+        navigationController?.pushViewController(touro, animated: false) }
     
     @objc func tocouAries () {
-        navigationController?.pushViewController(aries, animated: true) }
+        navigationController?.pushViewController(aries, animated: false) }
     
     @objc func tocouPeixe () {
-        navigationController?.pushViewController(peixe, animated: true) }
+        navigationController?.pushViewController(peixe, animated: false) }
     
     @objc func tocouAquario () {
-        navigationController?.pushViewController(aquario, animated: true) }
+        navigationController?.pushViewController(aquario, animated: false) }
     
     @objc func tocouCapricornio () {
-        navigationController?.pushViewController(capricornio, animated: true) }
+        navigationController?.pushViewController(capricornio, animated: false) }
     
     
     
-    
-}// fecha classe catalogo
-
-
+} // fecha classe catalogo
 
 
 
@@ -168,8 +186,21 @@ class Leo: UIViewController {
         let leoTexto = UIImage(named: "leotexto")!
         let leoTela = UIImageView(image: leoTexto)
         
+        
+        // botao voltar
+        let botaoVoltar = UIButton ()
+        let botaoVoltarImagem = UIImage (named: "botaovoltar")
+        botaoVoltar.frame = CGRect ( x: 25, y: 30, width: 100, height:37)
+        botaoVoltar.setImage(botaoVoltarImagem, for: .normal)
+        botaoVoltar.addTarget (nil, action: #selector (tocouVoltar), for: .touchUpInside)
+        
         view.addSubview (leoTela)
+        view.addSubview(botaoVoltar)
+        
+        
     } // fecha load view
+    @objc func tocouVoltar () {
+        navigationController?.popViewController(animated: false) }
 } // fecha leo
 
 class Virgo: UIViewController {
@@ -180,8 +211,19 @@ class Virgo: UIViewController {
         let virgoTexto = UIImage(named: "virgotexto")!
         let virgoTela = UIImageView(image: virgoTexto)
         
+        // botao voltar
+        let botaoVoltar = UIButton ()
+        let botaoVoltarImagem = UIImage (named: "botaovoltar")
+        botaoVoltar.frame = CGRect ( x: 25, y: 30, width: 100, height:37)
+        botaoVoltar.setImage(botaoVoltarImagem, for: .normal)
+        botaoVoltar.addTarget (nil, action: #selector (tocouVoltar), for: .touchUpInside)
+        
         view.addSubview (virgoTela)
+        view.addSubview(botaoVoltar)
+        
     } // fecha load view
+    @objc func tocouVoltar () {
+        navigationController?.popViewController(animated: false) }
 } // fecha virgo
 
 class Cancer: UIViewController {
@@ -192,8 +234,19 @@ class Cancer: UIViewController {
         let cancerTexto = UIImage(named: "cancertexto")!
         let cancerTela = UIImageView(image: cancerTexto)
         
+        // botao voltar
+        let botaoVoltar = UIButton ()
+        let botaoVoltarImagem = UIImage (named: "botaovoltar")
+        botaoVoltar.frame = CGRect ( x: 25, y: 30, width: 100, height:37)
+        botaoVoltar.setImage(botaoVoltarImagem, for: .normal)
+        botaoVoltar.addTarget (nil, action: #selector (tocouVoltar), for: .touchUpInside)
+        
         view.addSubview (cancerTela)
+        view.addSubview(botaoVoltar)
+        
     } // fecha load view
+    @objc func tocouVoltar () {
+        navigationController?.popViewController(animated: false) }
 } // fecha cancer
 
 
@@ -205,8 +258,19 @@ class Libra: UIViewController {
         let libraTexto = UIImage(named: "libratexto")!
         let libraTela = UIImageView(image: libraTexto)
         
+        // botao voltar
+        let botaoVoltar = UIButton ()
+        let botaoVoltarImagem = UIImage (named: "botaovoltar")
+        botaoVoltar.frame = CGRect ( x: 25, y: 30, width: 100, height:37)
+        botaoVoltar.setImage(botaoVoltarImagem, for: .normal)
+        botaoVoltar.addTarget (nil, action: #selector (tocouVoltar), for: .touchUpInside)
+        
         view.addSubview (libraTela)
+        view.addSubview(botaoVoltar)
+        
     } // fecha load view
+    @objc func tocouVoltar () {
+        navigationController?.popViewController(animated: false) }
 } // fecha libra
 
 class Escorpiao: UIViewController {
@@ -217,8 +281,19 @@ class Escorpiao: UIViewController {
         let escorpiaoTexto = UIImage(named: "escorpiaotexto")!
         let escorpiaoTela = UIImageView(image: escorpiaoTexto)
         
+        // botao voltar
+        let botaoVoltar = UIButton ()
+        let botaoVoltarImagem = UIImage (named: "botaovoltar")
+        botaoVoltar.frame = CGRect ( x: 25, y: 30, width: 100, height:37)
+        botaoVoltar.setImage(botaoVoltarImagem, for: .normal)
+        botaoVoltar.addTarget (nil, action: #selector (tocouVoltar), for: .touchUpInside)
+        
         view.addSubview (escorpiaoTela)
+        view.addSubview(botaoVoltar)
+        
     } // fecha load view
+    @objc func tocouVoltar () {
+        navigationController?.popViewController(animated: false) }
 } // fecha escorpiao
 
 class Sagitario: UIViewController {
@@ -229,8 +304,19 @@ class Sagitario: UIViewController {
         let sagitarioTexto = UIImage(named: "sagitariotexto")!
         let sagitarioTela = UIImageView(image: sagitarioTexto)
         
+        // botao voltar
+        let botaoVoltar = UIButton ()
+        let botaoVoltarImagem = UIImage (named: "botaovoltar")
+        botaoVoltar.frame = CGRect ( x: 25, y: 30, width: 100, height:37)
+        botaoVoltar.setImage(botaoVoltarImagem, for: .normal)
+        botaoVoltar.addTarget (nil, action: #selector (tocouVoltar), for: .touchUpInside)
+        
         view.addSubview (sagitarioTela)
+        view.addSubview(botaoVoltar)
+        
     } // fecha load view
+    @objc func tocouVoltar () {
+        navigationController?.popViewController(animated: false) }
 } // fecha sagitario
 
 class Gemini: UIViewController {
@@ -241,8 +327,19 @@ class Gemini: UIViewController {
         let geminiTexto = UIImage(named: "geminitexto")!
         let geminiTela = UIImageView(image: geminiTexto)
         
+        // botao voltar
+        let botaoVoltar = UIButton ()
+        let botaoVoltarImagem = UIImage (named: "botaovoltar")
+        botaoVoltar.frame = CGRect ( x: 25, y: 30, width: 100, height:37)
+        botaoVoltar.setImage(botaoVoltarImagem, for: .normal)
+        botaoVoltar.addTarget (nil, action: #selector (tocouVoltar), for: .touchUpInside)
+        
         view.addSubview (geminiTela)
+        view.addSubview(botaoVoltar)
+        
     } // fecha load view
+    @objc func tocouVoltar () {
+        navigationController?.popViewController(animated: false) }
 } // fecha gemini
 
 class Touro: UIViewController {
@@ -253,8 +350,19 @@ class Touro: UIViewController {
         let touroTexto = UIImage(named: "tourotexto")!
         let touroTela = UIImageView(image: touroTexto)
         
+        // botao voltar
+        let botaoVoltar = UIButton ()
+        let botaoVoltarImagem = UIImage (named: "botaovoltar")
+        botaoVoltar.frame = CGRect ( x: 25, y: 30, width: 100, height:37)
+        botaoVoltar.setImage(botaoVoltarImagem, for: .normal)
+        botaoVoltar.addTarget (nil, action: #selector (tocouVoltar), for: .touchUpInside)
+        
         view.addSubview (touroTela)
+        view.addSubview(botaoVoltar)
+        
     } // fecha load view
+    @objc func tocouVoltar () {
+        navigationController?.popViewController(animated: false) }
 } // fecha touro
 
 class Aries: UIViewController {
@@ -265,8 +373,19 @@ class Aries: UIViewController {
         let ariesTexto = UIImage(named: "ariestexto")!
         let ariesTela = UIImageView(image: ariesTexto)
         
+        // botao voltar
+        let botaoVoltar = UIButton ()
+        let botaoVoltarImagem = UIImage (named: "botaovoltar")
+        botaoVoltar.frame = CGRect ( x: 25, y: 30, width: 100, height:37)
+        botaoVoltar.setImage(botaoVoltarImagem, for: .normal)
+        botaoVoltar.addTarget (nil, action: #selector (tocouVoltar), for: .touchUpInside)
+        
         view.addSubview (ariesTela)
+        view.addSubview(botaoVoltar)
+        
     } // fecha load view
+    @objc func tocouVoltar () {
+        navigationController?.popViewController(animated: false) }
 } // fecha aries
 
 class Peixe: UIViewController {
@@ -277,8 +396,19 @@ class Peixe: UIViewController {
         let peixeTexto = UIImage(named: "peixetexto")!
         let peixeTela = UIImageView(image: peixeTexto)
         
+        // botao voltar
+        let botaoVoltar = UIButton ()
+        let botaoVoltarImagem = UIImage (named: "botaovoltar")
+        botaoVoltar.frame = CGRect ( x: 25, y: 30, width: 100, height:37)
+        botaoVoltar.setImage(botaoVoltarImagem, for: .normal)
+        botaoVoltar.addTarget (nil, action: #selector (tocouVoltar), for: .touchUpInside)
+        
         view.addSubview (peixeTela)
+        view.addSubview(botaoVoltar)
+        
     } // fecha load view
+    @objc func tocouVoltar () {
+        navigationController?.popViewController(animated: false) }
 } // fecha cancer
 
 class Aquario: UIViewController {
@@ -289,8 +419,19 @@ class Aquario: UIViewController {
         let aquarioTexto = UIImage(named: "aquariotexto")!
         let aquarioTela = UIImageView(image: aquarioTexto)
         
+        // botao voltar
+        let botaoVoltar = UIButton ()
+        let botaoVoltarImagem = UIImage (named: "botaovoltar")
+        botaoVoltar.frame = CGRect ( x: 25, y: 30, width: 100, height:37)
+        botaoVoltar.setImage(botaoVoltarImagem, for: .normal)
+        botaoVoltar.addTarget (nil, action: #selector (tocouVoltar), for: .touchUpInside)
+        
         view.addSubview (aquarioTela)
+        view.addSubview(botaoVoltar)
+        
     } // fecha load view
+    @objc func tocouVoltar () {
+        navigationController?.popViewController (animated: false) }
 } // fecha aquario
 
 
@@ -302,9 +443,23 @@ class Capricornio: UIViewController {
         let capricornioTexto = UIImage(named: "capricorniotexto")!
         let capricornioTela = UIImageView(image: capricornioTexto)
         
+        // botao voltar
+        let botaoVoltar = UIButton ()
+        let botaoVoltarImagem = UIImage (named: "botaovoltar")
+        botaoVoltar.frame = CGRect ( x: 25, y: 30, width: 100, height:37)
+        botaoVoltar.setImage(botaoVoltarImagem, for: .normal)
+        botaoVoltar.addTarget (nil, action: #selector (tocouVoltar), for: .touchUpInside)
+        
         view.addSubview (capricornioTela)
+        view.addSubview(botaoVoltar)
+        
     } // fecha load view
+    @objc func tocouVoltar () {
+        navigationController?.popViewController(animated: false) }
 } // fecha capricornio
+
+
+
 
 
 
@@ -321,4 +476,7 @@ let aries = Aries (screenType: .ipad, isPortrait: false)
 let peixe = Peixe (screenType: .ipad, isPortrait: false)
 let aquario = Aquario (screenType: .ipad, isPortrait: false)
 let capricornio = Capricornio (screenType: .ipad, isPortrait: false)
+let telaCeu = TelaCeu (screenType: .ipad, isPortrait: false)
+
+
 
