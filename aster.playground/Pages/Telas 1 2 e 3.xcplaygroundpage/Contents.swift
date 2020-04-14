@@ -9,7 +9,6 @@ let navigation = UINavigationController(screenType: .ipad, isPortrait: false)
 
 
 
-
 class PrimeiraTela : UIViewController {
     
     override func loadView() {
@@ -87,6 +86,7 @@ class SegundaTela : UIViewController {
     @objc func tocouVoltar () {
         navigationController?.popViewController(animated: false)
         
+        
     }// fecha funcao tocou botao proximo
     
 } // fecha view segunda tela
@@ -158,10 +158,10 @@ let catalogo = Catalogo (screenType: .ipad, isPortrait: false)
 
 navigation.pushViewController (primeiraTela, animated: false)
 
-navigation.navigationBar.backgroundColor = UIColor.azulFundo
-navigation.navigationBar.barTintColor = UIColor.azulFundo
+//navigation.navigationBar.backgroundColor = UIColor.azulFundo
+//navigation.navigationBar.barTintColor = UIColor.azulFundo
 
-navigation.navigationBar.isHidden = false
+navigation.navigationBar.isHidden = true
 
 PlaygroundPage.current.liveView = navigation.scale(to: 0.5)
 

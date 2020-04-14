@@ -14,8 +14,8 @@ public class TelaCeu : UIViewController {
     let viewBotoes = UIView()
     let botaoVoltar = UIButton()
     let botaoEstrelas = UIButton()
-
-
+    
+    
     
     public override func loadView() {
         fundoCeu = UIImageView(image: ceuEstrelas)
@@ -32,15 +32,14 @@ public class TelaCeu : UIViewController {
         let botaoDesenhosImagem = UIImage (named: "botaoleao")
         botaoDesenhos.frame = CGRect ( x: 180, y: 680, width: 50, height:50)
         botaoDesenhos.setImage(botaoDesenhosImagem, for: .normal)
-//        botaoDesenhos.addTarget (nil, action: #selector (tocouBotaoHistorias), for: .touchUpInside)
+        botaoDesenhos.addTarget (nil, action: #selector (tocouDesenhos), for: .touchUpInside)
         
         // botao TELA CEU
         let botaoEstrelasImagem = UIImage (named: "botaoestrela")
         botaoEstrelas.frame = CGRect ( x: 60, y: 680, width: 50, height:50)
         botaoEstrelas.setImage(botaoEstrelasImagem, for: .normal)
-//        botaoEstrelas.addTarget (nil, action: #selector (tocouCeu), for: .touchUpInside)
         
-       // botao Ligacoes
+        // botao Ligacoes
         let botaoLigacoesImagem = UIImage(named: "botaoligacoes")
         botaoLigacoes.setImage(botaoLigacoesImagem, for: .normal)
         botaoLigacoes.frame = CGRect ( x: 120, y: 680, width: 50, height:50)
@@ -58,14 +57,15 @@ public class TelaCeu : UIViewController {
         viewBotoes.addSubview(botaoEstrelas)
         viewBotoes.addSubview(botaoLigacoes)
         viewBotoes.addSubview(botaoDesenhos)
-        self.view.addSubview(botaoVoltar)
+        self.view.addSubview(botaoEstrelas)
         
     } // fecha view did load
-//    @objc func tocouBotaoHistorias () {
-//        navigationController?.pushViewController(catalogo, animated: false)    } // fecha funcao tocoubotaohistoria
-//
+   
+    @objc func tocouDesenhos() {
+        navigationController?.pushViewController(desenho, animated: false) }
+    
     @objc func tocouBotaoLigacoes() {
-        navigationController?.pushViewController(ajuda, animated: false)    }// fecha ajuda down
+        navigationController?.pushViewController(ajuda, animated: false) }
     
     @objc func tocouVoltar () {
         navigationController?.popViewController(animated: false) }
@@ -76,24 +76,126 @@ public class TelaCeu : UIViewController {
 
 
 class TelaAjuda : UIViewController {
-    override func loadView() {
-        
-        // fundo tela resposta
-        let respostaImagem = UIImage(named: "ceuresposta")!
-        let telaRespostas = UIImageView(image: respostaImagem)
-        
-        let scrollView = UIScrollView()
-        scrollView.contentSize = telaRespostas.frame.size
-        scrollView.addSubview(telaRespostas)
+    
+    // fundo tela ceu - todas as constelacoes
+    let ceuLigacoes = UIImage(named: "ceuresposta")!
+    var fundoCeu = UIImageView()
+    let scrollView = UIScrollView()
+    let botaoLigacoes = UIButton()
+    let botaoDesenhos = UIButton()
+    let viewBotoes = UIView()
+    let botaoEstrelas = UIButton()
+    
+    
+    public override func loadView() {
+        fundoCeu = UIImageView(image: ceuLigacoes)
+        self.view = viewBotoes
+    } // fecha load view
+    
+    public override func viewDidLoad() {
+        scrollView.frame = CGRect (x: 0, y: 0, width: 1024, height:768)
+        scrollView.contentSize = fundoCeu.frame.size
+        scrollView.addSubview(fundoCeu)
         scrollView.flashScrollIndicators()
         
-        self.view = scrollView
+        //Botao desenhos Signos
+        let botaoDesenhosImagem = UIImage (named: "botaoleao")
+        botaoDesenhos.frame = CGRect ( x: 180, y: 680, width: 50, height:50)
+        botaoDesenhos.setImage(botaoDesenhosImagem, for: .normal)
+        botaoDesenhos.addTarget (nil, action: #selector (tocouDesenhos), for: .touchUpInside)
+
+        // botao TELA CEU
+        let botaoEstrelasImagem = UIImage (named: "botaoestrela")
+        botaoEstrelas.frame = CGRect ( x: 60, y: 680, width: 50, height:50)
+        botaoEstrelas.setImage(botaoEstrelasImagem, for: .normal)
+        botaoEstrelas.addTarget (nil, action: #selector (tocouCeu), for: .touchUpInside)
         
-        scrollView.addSubview (telaRespostas)
+        // botao Ligacoes
+        let botaoLigacoesImagem = UIImage(named: "botaoligacoes")
+        botaoLigacoes.setImage(botaoLigacoesImagem, for: .normal)
+        botaoLigacoes.frame = CGRect ( x: 120, y: 680, width: 50, height:50)
         
+        
+        
+        viewBotoes.addSubview(scrollView)
+        viewBotoes.addSubview(botaoEstrelas)
+        viewBotoes.addSubview(botaoLigacoes)
+        viewBotoes.addSubview(botaoDesenhos)
+        self.view.addSubview(botaoEstrelas)
+        
+    } // fecha view did load
+    
+    @objc func tocouDesenhos() {
+    navigationController?.pushViewController(desenho, animated: false) }
+        
+    @objc func tocouCeu () {
+    navigationController?.popViewController(animated: false) }
+
+
+} // fecha classe tela ajuda (ligacoes)
+
+
+public class TelaDesenhos : UIViewController {
+    
+    // fundo tela ceu - todas as constelacoes
+    let ceuSignos = UIImage(named: "telasignos")!
+    var fundoCeu = UIImageView()
+    let scrollView = UIScrollView()
+    let botaoLigacoes = UIButton()
+    let botaoDesenhos = UIButton()
+    let viewBotoes = UIView()
+    let botaoEstrelas = UIButton()
+    
+    
+    public override func loadView() {
+        fundoCeu = UIImageView(image: ceuSignos)
+        self.view = viewBotoes
     } // fecha load view
-} // fecha classe respostas
+    
+    public override func viewDidLoad() {
+        scrollView.frame = CGRect (x: 0, y: 0, width: 1024, height:768)
+        scrollView.contentSize = fundoCeu.frame.size
+        scrollView.addSubview(fundoCeu)
+        scrollView.flashScrollIndicators()
+        
+        //Botao desenhos Signos
+        let botaoDesenhosImagem = UIImage (named: "botaoleao")
+        botaoDesenhos.frame = CGRect ( x: 180, y: 680, width: 50, height:50)
+        botaoDesenhos.setImage(botaoDesenhosImagem, for: .normal)
+        
+        // botao TELA CEU
+        let botaoEstrelasImagem = UIImage (named: "botaoestrela")
+        botaoEstrelas.frame = CGRect ( x: 60, y: 680, width: 50, height:50)
+        botaoEstrelas.setImage(botaoEstrelasImagem, for: .normal)
+        botaoEstrelas.addTarget (nil, action: #selector (tocouCeu), for: .touchUpInside)
+        
+        // botao Ligacoes
+        let botaoLigacoesImagem = UIImage(named: "botaoligacoes")
+        botaoLigacoes.setImage(botaoLigacoesImagem, for: .normal)
+        botaoLigacoes.frame = CGRect ( x: 120, y: 680, width: 50, height:50)
+        botaoLigacoes.addTarget(nil, action: #selector(tocouBotaoLigacoes), for: .touchUpInside)
+        
+        
+        
+        viewBotoes.addSubview(scrollView)
+        viewBotoes.addSubview(botaoEstrelas)
+        viewBotoes.addSubview(botaoLigacoes)
+        viewBotoes.addSubview(botaoDesenhos)
+        self.view.addSubview(botaoEstrelas)
+        
+    } // fecha view did load
+    
+    
+    @objc func tocouBotaoLigacoes() {
+        navigationController?.popViewController(animated: false) }
+    
+    @objc func tocouCeu () {
+    navigationController?.popToViewController(telaCeu, animated: false) }
+    
+    
+    
+} // fecha classe tela desenho
 
 
 let ajuda = TelaAjuda (screenType: .ipad, isPortrait: false)
-
+let desenho = TelaDesenhos (screenType: .ipad, isPortrait: false)
