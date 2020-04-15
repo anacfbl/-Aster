@@ -1,6 +1,8 @@
 import UIKit
 import PlaygroundSupport
 import Foundation
+import XCPlayground
+
 
 let navigation = UINavigationController(screenType: .ipad, isPortrait: false)
 
@@ -15,6 +17,50 @@ class PrimeiraTela : UIViewController {
         let view = UIView()
         self.view = view
         
+        // teste animacao
+//        let viewFlash = UIView ()
+//        let estrelas = UIImage (named: "animacaotela1")
+//        let estrelasPiscando = UIImageView (image: estrelas)
+//
+//        estrelasPiscando.flash()
+    
+    
+        
+        
+        
+        
+        let animationPictures: [UIImage] = [UIImage(named: "animacaotela1.png")!,UIImage(named: "2animacaptela1")!,UIImage(named: "3animacaotela1")!,UIImage(named: "1animacaotela1")!]
+
+        let animationView = UIImageView(frame: CGRect (x: 0, y: 0, width: 1024, height:768))
+        animationView.animationImages = animationPictures
+        animationView.animationDuration = 2
+        animationView.animationRepeatCount = 0
+        animationView.startAnimating()
+        
+        
+        let animacaoEstrelaLogo: [UIImage] = [UIImage(named: "1-8.png")!,UIImage(named: "2-8.png")!,UIImage(named: "3-8.png")!,UIImage(named: "4-8.png")!,UIImage(named: "5-8.png")!,UIImage(named: "6-8.png")!,UIImage(named: "7-8.png")!,UIImage(named: "8-8.png")!,UIImage(named: "9-8.png")!,UIImage(named: "8-8.png")!,UIImage(named: "7-8.png")!,UIImage(named: "6-8.png")!,UIImage(named: "5-8.png")!,UIImage(named: "4-8.png")!,UIImage(named: "3-8.png")!,UIImage(named: "2-8.png")!]
+
+        let animacaoEstrelaView = UIImageView(frame: CGRect (x: 650, y: 190, width: 70, height:70))
+        animacaoEstrelaView.animationImages = animacaoEstrelaLogo
+        animacaoEstrelaView.animationDuration = 2
+        animacaoEstrelaView.animationRepeatCount = 0
+        animacaoEstrelaView.startAnimating()
+        
+        
+        
+//        let gif = UIImage.animatedImageNamed ("gif.gif", duration:0)
+//        let testeGif = UIImageView(image: gif)
+//        testeGif.frame = CGRect (x: 0, y: 0, width: 1024, height:768)
+        
+        
+        
+        
+        
+//        let gif = UIImage.gif(name:"gif.gif")
+//        let gifView = UIImageView ( image: gif)
+//        gifView.loadGif(name: "gif.gif")
+//        gifView.frame = CGRect (x: 0, y: 0, width: 1024, height:768)
+        
         // fundo tela inicial - nome e estrelas
         let tela1 = UIImage(named: "tela1")!
         let telaInicio = UIImageView(image: tela1)
@@ -22,14 +68,23 @@ class PrimeiraTela : UIViewController {
         let botaoComecarImagem = UIImage (named: "comecarbotao")
         let botaoComecar = UIButton ()
         botaoComecar.setImage(botaoComecarImagem, for: .normal)
-        botaoComecar.frame = CGRect ( x: 420, y: 500, width: 161, height:43)
+        botaoComecar.frame = CGRect ( x: 420, y: 510, width: 161, height:43)
         
         botaoComecar.addTarget (nil, action: #selector (tocouBotaoComecar), for: .touchUpInside)
         
         view.addSubview (telaInicio)
         view.addSubview (botaoComecar)
         
+//        view.addSubview(gifView)
+        
+        view.addSubview (animationView)
+        view.addSubview (animacaoEstrelaView)
+
+//        view.addSubview(viewFlash)
+//        viewFlash.addSubview(estrelasPiscando)
+        
     } // fecha load view
+    
     
     
     @objc func tocouBotaoComecar () {
@@ -163,5 +218,5 @@ navigation.pushViewController (primeiraTela, animated: false)
 
 navigation.navigationBar.isHidden = true
 
-PlaygroundPage.current.liveView = navigation.scale(to: 0.5)
+PlaygroundPage.current.liveView = navigation.scale(to: 0.6)
 

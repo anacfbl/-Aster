@@ -23,7 +23,7 @@ public class Catalogo : UIViewController {
         // botao TELA CEU
         let botaoCeu = UIButton ()
         let botaoCeuImagem = UIImage (named: "asset")
-        botaoCeu.frame = CGRect ( x: 60, y: 680, width: 50, height:50)
+        botaoCeu.frame = CGRect ( x: 50, y: 680, width: 50, height:50)
         botaoCeu.setImage(botaoCeuImagem, for: .normal)
         botaoCeu.addTarget (nil, action: #selector (tocouCeu), for: .touchUpInside)
         

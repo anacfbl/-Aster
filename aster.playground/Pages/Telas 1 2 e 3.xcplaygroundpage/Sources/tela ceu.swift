@@ -29,20 +29,20 @@ public class TelaCeu : UIViewController {
         scrollView.flashScrollIndicators()
         
         //Botao desenhos Signos
-        let botaoDesenhosImagem = UIImage (named: "botaoleao")
-        botaoDesenhos.frame = CGRect ( x: 180, y: 680, width: 50, height:50)
+        let botaoDesenhosImagem = UIImage (named: "asset3")
+        botaoDesenhos.frame = CGRect ( x: 50, y: 620, width: 50, height:50)
         botaoDesenhos.setImage(botaoDesenhosImagem, for: .normal)
         botaoDesenhos.addTarget (nil, action: #selector (tocouDesenhos), for: .touchUpInside)
         
         // botao TELA CEU
-        let botaoEstrelasImagem = UIImage (named: "botaoestrela")
-        botaoEstrelas.frame = CGRect ( x: 60, y: 680, width: 50, height:50)
+        let botaoEstrelasImagem = UIImage (named: "asset")
+        botaoEstrelas.frame = CGRect ( x: 50, y: 680, width: 50, height:50)
         botaoEstrelas.setImage(botaoEstrelasImagem, for: .normal)
         
         // botao Ligacoes
-        let botaoLigacoesImagem = UIImage(named: "botaoligacoes")
+        let botaoLigacoesImagem = UIImage(named: "asset1")
         botaoLigacoes.setImage(botaoLigacoesImagem, for: .normal)
-        botaoLigacoes.frame = CGRect ( x: 120, y: 680, width: 50, height:50)
+        botaoLigacoes.frame = CGRect ( x: 50, y: 560, width: 50, height:50)
         botaoLigacoes.addTarget(nil, action: #selector(tocouBotaoLigacoes), for: .touchUpInside)
         
         // botao voltar
@@ -99,22 +99,22 @@ class TelaAjuda : UIViewController {
         scrollView.flashScrollIndicators()
         
         //Botao desenhos Signos
-        let botaoDesenhosImagem = UIImage (named: "botaoleao")
-        botaoDesenhos.frame = CGRect ( x: 180, y: 680, width: 50, height:50)
+        let botaoDesenhosImagem = UIImage (named: "asset3")
+        botaoDesenhos.frame = CGRect ( x: 50, y: 620, width: 50, height:50)
         botaoDesenhos.setImage(botaoDesenhosImagem, for: .normal)
         botaoDesenhos.addTarget (nil, action: #selector (tocouDesenhos), for: .touchUpInside)
 
         // botao TELA CEU
-        let botaoEstrelasImagem = UIImage (named: "botaoestrela")
-        botaoEstrelas.frame = CGRect ( x: 60, y: 680, width: 50, height:50)
+        let botaoEstrelasImagem = UIImage (named: "asset")
+        botaoEstrelas.frame = CGRect ( x: 50, y: 680, width: 50, height:50)
         botaoEstrelas.setImage(botaoEstrelasImagem, for: .normal)
         botaoEstrelas.addTarget (nil, action: #selector (tocouCeu), for: .touchUpInside)
         
         // botao Ligacoes
-        let botaoLigacoesImagem = UIImage(named: "botaoligacoes")
+        let botaoLigacoesImagem = UIImage(named: "asset1")
         botaoLigacoes.setImage(botaoLigacoesImagem, for: .normal)
-        botaoLigacoes.frame = CGRect ( x: 120, y: 680, width: 50, height:50)
-        
+        botaoLigacoes.frame = CGRect ( x: 50, y: 560, width: 50, height:50)
+
         
         
         viewBotoes.addSubview(scrollView)
@@ -126,10 +126,10 @@ class TelaAjuda : UIViewController {
     } // fecha view did load
     
     @objc func tocouDesenhos() {
-    navigationController?.pushViewController(desenho, animated: false) }
+    navigationController?.popToViewController(desenho, animated: false) }
         
     @objc func tocouCeu () {
-    navigationController?.popViewController(animated: false) }
+    navigationController?.popToViewController(telaCeu, animated: false) }
 
 
 } // fecha classe tela ajuda (ligacoes)
@@ -159,20 +159,20 @@ public class TelaDesenhos : UIViewController {
         scrollView.flashScrollIndicators()
         
         //Botao desenhos Signos
-        let botaoDesenhosImagem = UIImage (named: "botaoleao")
-        botaoDesenhos.frame = CGRect ( x: 180, y: 680, width: 50, height:50)
+        let botaoDesenhosImagem = UIImage (named: "asset3")
+        botaoDesenhos.frame = CGRect ( x: 50, y: 620, width: 50, height:50)
         botaoDesenhos.setImage(botaoDesenhosImagem, for: .normal)
         
         // botao TELA CEU
-        let botaoEstrelasImagem = UIImage (named: "botaoestrela")
-        botaoEstrelas.frame = CGRect ( x: 60, y: 680, width: 50, height:50)
+        let botaoEstrelasImagem = UIImage (named: "asset")
+        botaoEstrelas.frame = CGRect ( x: 50, y: 680, width: 50, height:50)
         botaoEstrelas.setImage(botaoEstrelasImagem, for: .normal)
         botaoEstrelas.addTarget (nil, action: #selector (tocouCeu), for: .touchUpInside)
         
         // botao Ligacoes
-        let botaoLigacoesImagem = UIImage(named: "botaoligacoes")
+        let botaoLigacoesImagem = UIImage(named: "asset1")
         botaoLigacoes.setImage(botaoLigacoesImagem, for: .normal)
-        botaoLigacoes.frame = CGRect ( x: 120, y: 680, width: 50, height:50)
+        botaoLigacoes.frame = CGRect ( x: 50, y: 560, width: 50, height:50)
         botaoLigacoes.addTarget(nil, action: #selector(tocouBotaoLigacoes), for: .touchUpInside)
         
         
@@ -187,8 +187,8 @@ public class TelaDesenhos : UIViewController {
     
     
     @objc func tocouBotaoLigacoes() {
-        navigationController?.popViewController(animated: false) }
-    
+        navigationController?.pushViewController(ajuda, animated: false) }
+
     @objc func tocouCeu () {
     navigationController?.popToViewController(telaCeu, animated: false) }
     
