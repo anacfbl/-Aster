@@ -6,7 +6,7 @@ import PlaygroundSupport
 public class TelaCeu : UIViewController {
     
     // fundo tela ceu - todas as constelacoes
-    let ceuEstrelas = UIImage(named: "ceuestrelas")!
+    let ceuEstrelas = UIImage(named: "ceuestrelasnome")!
     var fundoCeu = UIImageView()
     let scrollView = UIScrollView()
     let botaoLigacoes = UIButton()
@@ -78,7 +78,7 @@ public class TelaCeu : UIViewController {
 class TelaAjuda : UIViewController {
     
     // fundo tela ceu - todas as constelacoes
-    let ceuLigacoes = UIImage(named: "ceuresposta")!
+    let ceuLigacoes = UIImage(named: "ceurespostanome")!
     var fundoCeu = UIImageView()
     let scrollView = UIScrollView()
     let botaoLigacoes = UIButton()

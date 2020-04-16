@@ -13,7 +13,10 @@ public class Catalogo : UIViewController {
         let catalogoimagem = UIImage (named: "catalogo")!
         let telaCatalogo = UIImageView (image: catalogoimagem)
         
-        // botao voltar
+        
+        //BOTOES
+        
+        // botao VOLTAR
         let botaoVoltar = UIButton ()
         let botaoVoltarImagem = UIImage (named: "botaovoltar")
         botaoVoltar.frame = CGRect ( x: 25, y: 30, width: 100, height:37)
@@ -30,76 +33,61 @@ public class Catalogo : UIViewController {
         // botao LEO
         let botaoLeo = UIButton ()
         botaoLeo.frame = CGRect (x: 270, y: 470, width: 72, height:72)
-        //        botaoLeo.backgroundColor = .black
         botaoLeo.addTarget (nil, action: #selector (tocouLeo), for: .touchUpInside)
         
         // botao VIRGO
         let botaoVirgo = UIButton ()
         botaoVirgo.frame = CGRect (x: 400, y: 470, width: 87, height:72)
-        //        botaoVirgo.backgroundColor = .black
         botaoVirgo.addTarget (nil, action: #selector (tocouVirgo), for: .touchUpInside)
         
         // botao CANCER
         let botaoCancer = UIButton ()
         botaoCancer.frame = CGRect ( x: 170, y: 450, width: 75, height:65)
-        //        botaoCancer.backgroundColor = .black
         botaoCancer.addTarget (nil, action: #selector (tocouCancer), for: .touchUpInside)
         
         // botao LIBRA
         let botaoLibra = UIButton ()
         botaoLibra.frame = CGRect ( x: 520, y: 460, width: 75, height:65)
-        //        botaoLibra.backgroundColor = .black
         botaoLibra.addTarget (nil, action: #selector (tocouLibra), for: .touchUpInside)
         
         // botao ESCORPIAO
         let botaoEscorpiao = UIButton ()
         botaoEscorpiao.frame = CGRect ( x: 650, y: 430, width: 85, height:75)
-        //        botaoEscorpiao.backgroundColor = .black
         botaoEscorpiao.addTarget (nil, action: #selector (tocouEscorpiao), for: .touchUpInside)
         
         // botao SAGITARIO
         let botaoSagitario = UIButton ()
         botaoSagitario.frame = CGRect ( x: 770, y: 390, width: 85, height:70)
-        //                botaoSagitario.backgroundColor = .black
         botaoSagitario.addTarget (nil, action: #selector (tocouSagitario), for: .touchUpInside)
-        
         
         // botao GEMINI
         let botaoGemini = UIButton ()
         botaoGemini.frame = CGRect ( x: 190, y: 330, width: 80, height:70)
-        //        botaoGemini.backgroundColor = .black
         botaoGemini.addTarget (nil, action: #selector (tocouGemini), for: .touchUpInside)
         
         // botao TOURO
         let botaoTouro = UIButton ()
         botaoTouro.frame = CGRect ( x: 310, y: 290, width: 85, height:60)
-        //        botaoTouro.backgroundColor = .black
         botaoTouro.addTarget (nil, action: #selector (tocouTouro), for: .touchUpInside)
-        
         
         // botao ARIES
         let botaoAries = UIButton ()
         botaoAries.frame = CGRect ( x: 420, y: 270, width: 85, height:60)
-        //        botaoAries.backgroundColor = .black
         botaoAries.addTarget (nil, action: #selector (tocouAries), for: .touchUpInside)
         
         // botao PEIXE
         let botaoPeixe = UIButton ()
         botaoPeixe.frame = CGRect ( x: 530, y: 260, width: 80, height:70)
-        //               botaoPeixe.backgroundColor = .black
         botaoPeixe.addTarget (nil, action: #selector (tocouPeixe), for: .touchUpInside)
         
         // botao AQUARIO
         let botaoAquario = UIButton ()
         botaoAquario.frame = CGRect ( x: 650, y: 260, width: 85, height:60)
-        //               botaoAquario.backgroundColor = .black
         botaoAquario.addTarget (nil, action: #selector (tocouAquario), for: .touchUpInside)
         
         // botao CAPRICORNIO
-        
         let botaoCapricornio = UIButton ()
         botaoCapricornio.frame = CGRect ( x: 760, y: 270, width: 75, height:65)
-        //           botaoCapricornio.backgroundColor = .black
         botaoCapricornio.addTarget (nil, action: #selector (tocouCapricornio), for: .touchUpInside)
         
                 
@@ -117,8 +105,9 @@ public class Catalogo : UIViewController {
         view.addSubview(botaoPeixe)
         view.addSubview(botaoAquario)
         view.addSubview(botaoCapricornio)
-//        view.addSubview(botaoCeu)
         view.addSubview(botaoVoltar)
+       // view.addSubview(botaoCeu)
+
         
         
         
@@ -129,15 +118,20 @@ public class Catalogo : UIViewController {
     // funcoes botoes
     
     @objc func tocouVoltar () {
-        navigationController?.popViewController(animated: false)
-
-    }
+        navigationController?.popViewController(animated: false) }
     
     @objc func tocouCeu () {
         navigationController?.pushViewController(telaCeu, animated: false) }
     
+    
+    
+    
     @objc func tocouLeo () {
-        navigationController?.pushViewController(leo, animated: false) }
+        navigationController?.pushViewController(leo, animated: false)
+        
+        let leoImagem = UIImage (named: "leoimagem-8")!
+        let imagemLeo = UIImageView (image: leoImagem)
+        view.addSubview(imagemLeo) }
     
     @objc func tocouVirgo () {
         navigationController?.pushViewController(virgo, animated: false)
@@ -147,34 +141,74 @@ public class Catalogo : UIViewController {
         view.addSubview(imagemVirgo) }
     
     @objc func tocouCancer () {
-        navigationController?.pushViewController(cancer, animated: false) }
+        navigationController?.pushViewController(cancer, animated: false)
+        
+        let cancerImagem = UIImage (named: "cancerimagem-8")!
+        let imagemCancer = UIImageView (image: cancerImagem)
+        view.addSubview(imagemCancer) }
     
     @objc func tocouLibra () {
-        navigationController?.pushViewController(libra, animated: false) }
+        navigationController?.pushViewController(libra, animated: false)
+        
+        let libraImagem = UIImage (named: "libraimagem-8")!
+        let imagemLibra = UIImageView (image: libraImagem)
+        view.addSubview(imagemLibra) }
     
     @objc func tocouEscorpiao () {
-        navigationController?.pushViewController(escorpiao, animated: false) }
+        navigationController?.pushViewController(escorpiao, animated: false)
+        
+        let escorpiaoImagem = UIImage (named: "escorpiaoimagem-8")!
+        let imagemEscorpio = UIImageView (image: escorpiaoImagem)
+        view.addSubview(imagemEscorpio) }
     
     @objc func tocouSagitario () {
-        navigationController?.pushViewController(sagitario, animated: false) }
+        navigationController?.pushViewController(sagitario, animated: false)
+        
+        let sagitarioImagem = UIImage (named: "sagitarioimagem-8")!
+        let imagemSagitario = UIImageView (image: sagitarioImagem)
+        view.addSubview(imagemSagitario) }
     
     @objc func tocouGemini () {
-        navigationController?.pushViewController(gemini, animated: false) }
+        navigationController?.pushViewController(gemini, animated: false)
+        
+        let geminiImagem = UIImage (named: "geminiimagem-8")!
+        let imagemGemini = UIImageView (image: geminiImagem)
+        view.addSubview(imagemGemini) }
     
     @objc func tocouTouro () {
-        navigationController?.pushViewController(touro, animated: false) }
+        navigationController?.pushViewController(touro, animated: false)
+       
+        let touroImagem = UIImage (named: "touroimagem-8")!
+        let imagemTouro = UIImageView (image: touroImagem)
+        view.addSubview(imagemTouro) }
     
     @objc func tocouAries () {
-        navigationController?.pushViewController(aries, animated: false) }
+        navigationController?.pushViewController(aries, animated: false)
+        
+        let ariesImagem = UIImage (named: "ariesimagem-8")!
+        let imagemAries = UIImageView (image: ariesImagem)
+        view.addSubview(imagemAries) }
     
     @objc func tocouPeixe () {
-        navigationController?.pushViewController(peixe, animated: false) }
+        navigationController?.pushViewController(peixe, animated: false)
+        
+        let peixeImagem = UIImage (named: "peixesimagem-8")!
+        let imagemPeixe = UIImageView (image: peixeImagem)
+        view.addSubview(imagemPeixe) }
     
     @objc func tocouAquario () {
-        navigationController?.pushViewController(aquario, animated: false) }
+        navigationController?.pushViewController(aquario, animated: false)
+        
+        let aquarioImagem = UIImage (named: "auqarioimagem-8")!
+        let imagemAquario = UIImageView (image: aquarioImagem)
+        view.addSubview(imagemAquario) }
     
     @objc func tocouCapricornio () {
-        navigationController?.pushViewController(capricornio, animated: false) }
+        navigationController?.pushViewController(capricornio, animated: false)
+        
+        let capricornioImagem = UIImage (named: "capricornioimagem-8")!
+        let imagemCapricornio = UIImageView (image: capricornioImagem)
+        view.addSubview(imagemCapricornio) }
     
     
     

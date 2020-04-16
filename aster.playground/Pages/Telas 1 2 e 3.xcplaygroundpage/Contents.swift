@@ -59,7 +59,7 @@ class PrimeiraTela : UIViewController {
         view.addSubview (botaoComecar)
         
         
-        view.addSubview (animationView)
+//        view.addSubview (animationView)
         view.addSubview (animacaoEstrelaView)
 
         
