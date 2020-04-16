@@ -16,3 +16,24 @@ public extension UIView {
     }
     
 }
+
+
+// teste animacao
+//        let viewFlash = UIView ()
+//        let estrelas = UIImage (named: "animacaotela1")
+//        let estrelasPiscando = UIImageView (image: estrelas)
+//
+//        estrelasPiscando.flash()
+
+
+
+//        let gif = UIImage.animatedImageNamed ("gif.gif", duration:0)
+//        let testeGif = UIImageView(image: gif)
+//        testeGif.frame = CGRect (x: 0, y: 0, width: 1024, height:768)
+        
+        
+        
+//        let gif = UIImage.gif(name:"gif.gif")
+//        let gifView = UIImageView ( image: gif)
+//        gifView.loadGif(name: "gif.gif")
+//        gifView.frame = CGRect (x: 0, y: 0, width: 1024, height:768)

@@ -102,8 +102,7 @@ public class Catalogo : UIViewController {
         //           botaoCapricornio.backgroundColor = .black
         botaoCapricornio.addTarget (nil, action: #selector (tocouCapricornio), for: .touchUpInside)
         
-        
-        
+                
         // views
         view.addSubview(telaCatalogo)
         view.addSubview(botaoLeo)
@@ -118,7 +117,7 @@ public class Catalogo : UIViewController {
         view.addSubview(botaoPeixe)
         view.addSubview(botaoAquario)
         view.addSubview(botaoCapricornio)
-        view.addSubview(botaoCeu)
+//        view.addSubview(botaoCeu)
         view.addSubview(botaoVoltar)
         
         
@@ -126,10 +125,13 @@ public class Catalogo : UIViewController {
     } // fecha load view
     
     
+    
     // funcoes botoes
     
     @objc func tocouVoltar () {
-        navigationController?.popViewController(animated: false) }
+        navigationController?.popViewController(animated: false)
+
+    }
     
     @objc func tocouCeu () {
         navigationController?.pushViewController(telaCeu, animated: false) }
@@ -138,7 +140,11 @@ public class Catalogo : UIViewController {
         navigationController?.pushViewController(leo, animated: false) }
     
     @objc func tocouVirgo () {
-        navigationController?.pushViewController(virgo, animated: false) }
+        navigationController?.pushViewController(virgo, animated: false)
+  
+        let virgoImagem = UIImage (named: "virgoimagem")!
+        let imagemVirgo = UIImageView (image: virgoImagem)
+        view.addSubview(imagemVirgo) }
     
     @objc func tocouCancer () {
         navigationController?.pushViewController(cancer, animated: false) }
@@ -476,6 +482,7 @@ let aries = Aries (screenType: .ipad, isPortrait: false)
 let peixe = Peixe (screenType: .ipad, isPortrait: false)
 let aquario = Aquario (screenType: .ipad, isPortrait: false)
 let capricornio = Capricornio (screenType: .ipad, isPortrait: false)
+
 let telaCeu = TelaCeu (screenType: .ipad, isPortrait: false)
 
 

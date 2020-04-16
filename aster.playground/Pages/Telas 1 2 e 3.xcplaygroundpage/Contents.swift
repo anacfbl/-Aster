@@ -17,27 +17,18 @@ class PrimeiraTela : UIViewController {
         let view = UIView()
         self.view = view
         
-        // teste animacao
-//        let viewFlash = UIView ()
-//        let estrelas = UIImage (named: "animacaotela1")
-//        let estrelasPiscando = UIImageView (image: estrelas)
-//
-//        estrelasPiscando.flash()
-    
-    
         
-        
-        
-        
+        // animacao CEU
         let animationPictures: [UIImage] = [UIImage(named: "animacaotela1.png")!,UIImage(named: "2animacaptela1")!,UIImage(named: "3animacaotela1")!,UIImage(named: "1animacaotela1")!]
 
         let animationView = UIImageView(frame: CGRect (x: 0, y: 0, width: 1024, height:768))
         animationView.animationImages = animationPictures
-        animationView.animationDuration = 2
+        animationView.animationDuration = 4
         animationView.animationRepeatCount = 0
         animationView.startAnimating()
         
-        
+     
+        // animacao estrela LOGO
         let animacaoEstrelaLogo: [UIImage] = [UIImage(named: "1-8.png")!,UIImage(named: "2-8.png")!,UIImage(named: "3-8.png")!,UIImage(named: "4-8.png")!,UIImage(named: "5-8.png")!,UIImage(named: "6-8.png")!,UIImage(named: "7-8.png")!,UIImage(named: "8-8.png")!,UIImage(named: "9-8.png")!,UIImage(named: "8-8.png")!,UIImage(named: "7-8.png")!,UIImage(named: "6-8.png")!,UIImage(named: "5-8.png")!,UIImage(named: "4-8.png")!,UIImage(named: "3-8.png")!,UIImage(named: "2-8.png")!]
 
         let animacaoEstrelaView = UIImageView(frame: CGRect (x: 650, y: 190, width: 70, height:70))
@@ -48,22 +39,14 @@ class PrimeiraTela : UIViewController {
         
         
         
-//        let gif = UIImage.animatedImageNamed ("gif.gif", duration:0)
-//        let testeGif = UIImageView(image: gif)
-//        testeGif.frame = CGRect (x: 0, y: 0, width: 1024, height:768)
-        
-        
-        
-        
-        
-//        let gif = UIImage.gif(name:"gif.gif")
-//        let gifView = UIImageView ( image: gif)
-//        gifView.loadGif(name: "gif.gif")
-//        gifView.frame = CGRect (x: 0, y: 0, width: 1024, height:768)
+
         
         // fundo tela inicial - nome e estrelas
         let tela1 = UIImage(named: "tela1")!
         let telaInicio = UIImageView(image: tela1)
+       
+        
+        
         // botao comecar tela inicial
         let botaoComecarImagem = UIImage (named: "comecarbotao")
         let botaoComecar = UIButton ()
@@ -75,13 +58,10 @@ class PrimeiraTela : UIViewController {
         view.addSubview (telaInicio)
         view.addSubview (botaoComecar)
         
-//        view.addSubview(gifView)
         
         view.addSubview (animationView)
         view.addSubview (animacaoEstrelaView)
 
-//        view.addSubview(viewFlash)
-//        viewFlash.addSubview(estrelasPiscando)
         
     } // fecha load view
     
@@ -187,7 +167,7 @@ class TerceiraTela : UIViewController {
     } // fecha load view
     
     @objc func tocouBotaoComecarZodiaco () {
-        navigationController?.pushViewController(catalogo, animated: false) }
+        navigationController?.pushViewController(quartaTela, animated: false) }
     
     @objc func tocouVoltar () {
         navigationController?.popViewController(animated: false)
@@ -210,6 +190,7 @@ let primeiraTela = PrimeiraTela (screenType: .ipad, isPortrait: false)
 let segundaTela = SegundaTela (screenType: .ipad, isPortrait: false)
 let terceiraTela = TerceiraTela (screenType: .ipad, isPortrait: false)
 let catalogo = Catalogo (screenType: .ipad, isPortrait: false)
+let quartaTela = QuartaTela (screenType: .ipad, isPortrait: false)
 
 navigation.pushViewController (primeiraTela, animated: false)
 
